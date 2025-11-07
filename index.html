@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Simple Todo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>할 일</h1>
+
+      <form id="new-todo-form" autocomplete="off">
+        <input
+          id="new-todo"
+          type="text"
+          placeholder="할 일을 입력하세요…"
+          aria-label="새 할 일"
+        />
+        <button type="submit" aria-label="추가">추가</button>
+      </form>
+
+      <div class="controls">
+        <div class="filters" role="tablist" aria-label="필터">
+          <button data-filter="all" class="filter is-active" role="tab" aria-selected="true">전체</button>
+          <button data-filter="active" class="filter" role="tab" aria-selected="false">미완료</button>
+          <button data-filter="completed" class="filter" role="tab" aria-selected="false">완료</button>
+        </div>
+        <div class="meta">
+          <span id="count">0 개</span>
+          <button id="clear-completed" class="linklike" type="button">완료 삭제</button>
+        </div>
+      </div>
+
+      <ul id="list" class="list" aria-live="polite"></ul>
+
+      <footer class="footer">
+        <span>로컬에만 저장됩니다.</span>
+      </footer>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+  </html>
+
